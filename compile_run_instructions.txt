@@ -1,0 +1,15 @@
+*** USAR WSL2 (Linux) ***
+
+
+Compilar o C:
+
+	gcc code1.c -o code1 -O3
+
+
+Correr o Python:
+
+	python3 gen.py [Nº de exames] [probabilidade de cada par ter aluno em comum] [seed] [output file name (dataXX.in)]
+
+
+Correr o C:
+	./code1 [seed] [max time (seconds)] [input]
