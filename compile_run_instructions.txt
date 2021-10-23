@@ -9,7 +9,7 @@ Compilar o C:
 Correr o Python:
 
 	python3 gen.py [Nº de exames] [probabilidade de cada par ter aluno em comum] [seed] [output file name (dataXX.in)]
-	python3 gen.py 100 50 1234 data1.in
+	python3 gen.py 100 0.2 1234 data1.in
 
 Correr o C:
 	./code1 [seed] [max time (seconds)] [input]
