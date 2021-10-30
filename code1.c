@@ -72,7 +72,7 @@ double backtrack(int a[], int pos, int col, int n){
 
 
 int main(int argc, char *argv[]) {
-  int i, j, x, y, n, m, c;
+  int i, j, x, y, n, m, c, fscanf_memory_leak;
   int a[NMAX];
 
   seed = atoi(argv[1]);
@@ -84,7 +84,7 @@ int main(int argc, char *argv[]) {
       exit(EXIT_FAILURE);
   }
 
-  fscanf(fp,"%d %d", &n, &m);
+  fscanf_memory_leak = fscanf(fp,"%d %d", &n, &m);
   for (i = 0; i < n; i++){
       a[i] = 0;
       p[i] = i;
@@ -94,7 +94,7 @@ int main(int argc, char *argv[]) {
    shuffle(n, seed);	  
 
    for (i = 0; i < m; i++){
-      fscanf(fp,"%d %d", &x, &y);
+      fscanf_memory_leak = fscanf(fp,"%d %d", &x, &y);
       M[x-1][y-1] = M[y-1][x-1] = 1;
    }    
    start = clock();
