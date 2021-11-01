@@ -4,14 +4,14 @@ gcc code1.c -o code1 -O3
 gcc code2.c -o code2 -O3
 
 
-MAX_ITERATIONS=2
+MAX_ITERATIONS=16
 
 FILENAME_DATA_INPUT="data.in"
 
 # Variáveis do gen.py
-N_EXAMS=20    # Max 299 segundo o enunciado
-PROBABILITY_PAIRS=96 # 0.0 a 1.0
-PROBABILTY_PAIRS_INCREMENT_VALUE=2
+N_EXAMS=60  # Max 299 segundo o enunciado
+PROBABILITY_PAIRS=20 # Out of 100
+EXAMS_INCREMENT_VALUE=2
 SEED_GEN=$(shuf -i1-30000 -n1) 
 # Variáveis do programa
 SEED_PROGRAM=$(shuf -i1-30000 -n1) 
@@ -46,7 +46,7 @@ do
 
     # Increment variables
     #N_EXAMS=$(( N_EXAMS+10 ))
-    PROBABILITY_PAIRS=$(( PROBABILITY_PAIRS+$PROBABILTY_PAIRS_INCREMENT_VALUE ))
+    N_EXAMS=$(( N_EXAMS+$EXAMS_INCREMENT_VALUE ))
     
 
     I=$(( I+1 ))
