@@ -1080,7 +1080,6 @@ n_exams probability_pairs seed_gen seed_program min_time_slots time_in_seconds
 54 20 5636 26443 -1 120.000001 
 54 20 5636 26443 -1 120.000001 
 54 20 13280 9639 -1 120.000001 
-n_exams probability_pairs seed_gen seed_program min_time_slots time_in_seconds
 56 20 26172 10982 -1 120.000001 
 56 20 26172 10982 -1 120.000001 
 56 20 14816 1865 5 7.592242 
