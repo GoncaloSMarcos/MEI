@@ -317,6 +317,88 @@ legend( x="topleft",
 
 
 
+
+
+
+
+
+
+
+
+
+
+# ------------------ TESTES PROBABILIDADE 65 95 ------------------ 
+testeProb1_65_95 = read.table("ResultsExames1.txt", header=TRUE)
+
+n <- boxplot(time_in_seconds ~ probability_pairs, data = testeProb1_65_95);
+testeProb1_65_95_without_outlier <- testeProb1_65_95[-which(testeProb1_65_95$time_in_seconds %in% n$out), ]
+ag_testeProb1_65_95 = aggregate(time_in_seconds ~ probability_pairs, data = testeProb1_65_95_without_outlier, mean)
+
+plot(testeProb1_65_95$probability_pairs,testeProb1_65_95$time_in_seconds, 
+     main = "Teste Probabilidade 1 (65% a 95%) - Raw data", 
+     xlab = "Probabilidade (em %)",
+     ylab ="Tempo de execução (em segundos)")
+plot(testeProb1_65_95_without_outlier$probability_pairs,testeProb1_65_95_without_outlier$time_in_seconds, 
+     main = "Teste Probabilidade 1 (65% a 95%) - Sem outliers", 
+     xlab = "Probabilidade (em %)",
+     ylab ="Tempo de execução (em segundos)")
+plot(ag_testeProb1_65_95$probability_pairs,ag_testeProb1_65_95$time_in_seconds, 
+     main = "Teste Probabilidade 1 (65% a 95%) - Sem outliers, valor médio por probabilidade", 
+     xlab = "Probabilidade (em %)",
+     ylab ="Tempo de execução (em segundos)")
+
+
+#-----
+
+testeProb2_65_95 = read.table("ResultsExams2.txt", header=TRUE)
+
+n <- boxplot(time_in_seconds ~ probability_pairs, data = testeProb2_65_95);
+testeProb2_65_95_without_outlier <- testeProb2_65_95[-which(testeProb2_65_95$time_in_seconds %in% n$out), ]
+ag_testeProb2_65_95 = aggregate(time_in_seconds ~ probability_pairs, data = testeProb2_65_95_without_outlier, mean)
+
+plot(testeProb2_65_95$probability_pairs,testeProb2_65_95$time_in_seconds, 
+     main = "Teste Probabilidade 2 (65% a 95%) - Raw data", 
+     xlab = "Probabilidade (em %)",
+     ylab ="Tempo de execução (em segundos)")
+plot(testeProb2_65_95_without_outlier$probability_pairs,testeProb2_65_95_without_outlier$time_in_seconds, 
+     main = "Teste Probabilidade 2 (65% a 95%) - Sem outliers", 
+     xlab = "Probabilidade (em %)",
+     ylab ="Tempo de execução (em segundos)")
+plot(ag_testeProb2_65_95$probability_pairs,ag_testeProb2_65_95$time_in_seconds, 
+     main = "Teste Probabilidade 2 (65% a 95%) - Sem outliers, valor médio por probabilidade", 
+     xlab = "Probabilidade (em %)",
+     ylab ="Tempo de execução (em segundos)")
+
+
+#-- GRAFICO BOM
+
+plot(ag_testeProb1_65_95$probability_pairs,ag_testeProb1_65_95$time_in_seconds, 
+     main = paste("------ Teste Probabilidade (65% a 92%) ------\n-> Número de Exames 20 (fixo) ; Probabilidade [65:1:92]\n->40 testes por valor de Probabilidade"), 
+     xlab = "Probabilidade (em %)",
+     ylab ="Tempo de execução (em segundos)",
+     type = "l",
+     col = "red")
+
+lines(ag_testeProb2_65_95$probability_pairs,ag_testeProb2_65_95$time_in_seconds, 
+      col = "blue")
+
+legend( x="topleft", 
+        legend=c("code1.c","code2.c"),
+        col=c("red","blue"), lwd=1, lty=c(1,1), 
+        pch=c(NA,NA) )
+
+
+
+
+
+
+
+
+
+
+
+
+
 plot(testeProb1$probability_pairs,testeProb1$time_in_seconds)
 plot(data2$probability_pairs,data2$time_in_seconds)
 
