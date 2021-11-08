@@ -396,6 +396,68 @@ legend( x="topleft",
 
 
 
+# ------------------ TESTES EXAME E PROB EXPERIENCIA ------------------ 
+
+teste_exames10_40_prob1_16_1 = read.table("teste_exames10-40_prob1-16_1.txt", header=TRUE)
+
+n <- boxplot(time_in_seconds ~ n_exams, data = teste_exames10_40_prob1_16_1);
+teste_exames10_40_prob1_16_1_without_outlier <- teste_exames10_40_prob1_16_1[-which(teste_exames10_40_prob1_16_1$time_in_seconds %in% n$out), ]
+ag_teste_exames10_40_prob1_16_1 = aggregate(time_in_seconds ~ n_exams, data = teste_exames10_40_prob1_16_1_without_outlier, mean)
+
+plot(teste_exames10_40_prob1_16_1$n_exams,teste_exames10_40_prob1_16_1$time_in_seconds, 
+     main = "Teste Exames e Prob Experiencia 1 - Raw data (Probabilidades 1 a 16)", 
+     xlab = "Número de Exames",
+     ylab ="Tempo de execução (em segundos)")
+plot(teste_exames10_40_prob1_16_1_without_outlier$n_exams,teste_exames10_40_prob1_16_1_without_outlier$time_in_seconds, 
+     main = "Teste Exames e Prob Experiencia 1 - Sem outliers (Probabilidades 1 a 16)", 
+     xlab = "Número de Exames",
+     ylab ="Tempo de execução (em segundos)")
+plot(ag_teste_exames10_40_prob1_16_1$n_exams,ag_teste_exames10_40_prob1_16_1$time_in_seconds, 
+     main = "Teste Exames e Prob Experiencia 1 - Sem outliers, valor médio por número de exames (Probabilidades 1 a 16)", 
+     xlab = "Número de Exames",
+     ylab ="Tempo de execução (em segundos)")
+
+# ------------------  ------------------ 
+
+teste_exames10_40_prob1_16_2 = read.table("teste_exames10-40_prob1-16_2.txt", header=TRUE)
+
+n <- boxplot(time_in_seconds ~ n_exams, data = teste_exames10_40_prob1_16_2);
+teste_exames10_40_prob1_16_2_without_outlier <- teste_exames10_40_prob1_16_2[-which(teste_exames10_40_prob1_16_2$time_in_seconds %in% n$out), ]
+ag_teste_exames10_40_prob1_16_2 = aggregate(time_in_seconds ~ n_exams, data = teste_exames10_40_prob1_16_2_without_outlier, mean)
+
+plot(teste_exames10_40_prob1_16_2$n_exams,teste_exames10_40_prob1_16_2$time_in_seconds, 
+     main = "Teste Exames e Prob 1 - Raw data (Exames 10 a 60, 2 em 2)", 
+     xlab = "Probabilidade",
+     ylab ="Tempo de execução (em segundos)")
+plot(teste_exames10_40_prob1_16_2_without_outlier$n_exams,teste_exames10_40_prob1_16_2_without_outlier$time_in_seconds, 
+     main = "Teste Exames e Prob 1 - Sem outliers (Exames 10 a 60, 2 em 2)", 
+     xlab = "Probabilidade",
+     ylab ="Tempo de execução (em segundos)")
+plot(ag_teste_exames10_40_prob1_16_2$n_exams,ag_teste_exames10_40_prob1_16_2$time_in_seconds, 
+     main = "Teste Exames e Prob 1 - Sem outliers, valor médio por número de exames (Exames 10 a 60, 2 em 2)", 
+     xlab = "Probabilidade",
+     ylab ="Tempo de execução (em segundos)")
+
+
+
+
+#-- GRAFICO BOM
+
+plot(ag_teste_exames10_40_prob1_16_1$n_exams,ag_teste_exames10_40_prob1_16_1$time_in_seconds, 
+     main = paste("------ Teste Número de Exames (10 a 40) ------\n-> Número de Exames [10:1:40] ; Probabilidade [1:1:16]\n-> 20 testes por valor de Número de Exames"), 
+     xlab = "Número de Exames",
+     ylab ="Tempo de execução (em segundos)",
+     type = "l",
+     col = "red")
+
+lines(ag_teste_exames10_40_prob1_16_2$n_exams,ag_teste_exames10_40_prob1_16_2$time_in_seconds, 
+      col = "blue")
+
+legend( x="topleft", 
+        legend=c("code1.c","code2.c"),
+        col=c("red","blue"), lwd=1, lty=c(1,1), 
+        pch=c(NA,NA) )
+
 
 
 
