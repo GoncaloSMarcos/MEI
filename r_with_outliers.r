@@ -38,6 +38,39 @@ legend( x="topleft",
 
 
 
+#-- Regressão linear experiencia 2
+
+
+plot(ag_testeProb1$probability_pairs,log(ag_testeProb1$time_in_seconds), 
+     main = paste("------ Experiência 2 ------\n-> 20 exames ; Probabilidade [2:2:96]\n-> 40 testes por valor de probabilidade"), 
+     xlab = "Probabilidade (em %)",
+     ylab ="Logaritmo do Tempo de Execução",
+     type = "p",
+     col = "red")
+
+points(ag_testeProb2$probability_pairs,log(ag_testeProb2$time_in_seconds), 
+       col = "blue")
+
+legend( x="topleft", 
+        legend=c("code1.c","code2.c"),
+        col=c("red","blue"), lwd=1, lty=c(1,1), 
+        pch=c(NA,NA) )
+
+
+lr.out1 = lm(log(ag_testeProb1$time_in_seconds)~ag_testeProb1$probability_pairs)
+sum1 = summary(lr.out1)
+abline(lr.out1, col = "red")
+
+lr.out2 = lm(log(ag_testeProb2$time_in_seconds)~ag_testeProb2$probability_pairs)
+sum2 = summary(lr.out2)
+abline(lr.out2, col = "blue")
+
+legend(x="bottomright", 
+       legend=sprintf("code1.c ??? R² = %s\ncode2.c ??? R² = %s",round(sum1$r.squared,6), round(sum2$r.squared,6)))
+
+
+
+
 
 
 
@@ -80,20 +113,56 @@ plot(ag_testeExams2$n_exams,ag_testeExams2$time_in_seconds,
 
 #-- GRAFICO BOM
 
-plot(ag_testeExams1_sd$n_exams,ag_testeExams1_sd$time_in_seconds, 
+plot(ag_testeExams1$n_exams,ag_testeExams1$time_in_seconds, 
      main = paste("------ Experiência 1 ------\n-> Número de Exames [2:2:60] ; Probabilidade 20%\n-> 40 repetições"), 
      xlab = "Número de Exames",
-     ylab ="Desvio Padrão do Tempo de Execução (em segundos)",
-     type = "l",
+     ylab ="Tempo de Execução (em segundos)",
+     type = "p",
      col = "red")
 
-lines(ag_testeExams2_sd$n_exams,ag_testeExams2_sd$time_in_seconds, 
+points(ag_testeExams2$n_exams,ag_testeExams2$time_in_seconds, 
       col = "blue")
 
 legend( x="topleft", 
         legend=c("code1.c","code2.c"),
         col=c("red","blue"), lwd=1, lty=c(1,1), 
         pch=c(NA,NA) )
+
+
+
+#-- Regressão linear
+
+
+plot(ag_testeExams1$n_exams,log(ag_testeExams1$time_in_seconds), 
+     main = paste("------ Experiência 1 ------\n-> Número de Exames [2:2:60] ; Probabilidade 20%\n-> 40 repetições"), 
+     xlab = "Número de Exames",
+     ylab ="Logaritmo do Tempo de Execução",
+     type = "p",
+     col = "red")
+
+points(ag_testeExams2$n_exams,log(ag_testeExams2$time_in_seconds), 
+       col = "blue")
+
+legend( x="topleft", 
+        legend=c("code1.c","code2.c"),
+        col=c("red","blue"), lwd=1, lty=c(1,1), 
+        pch=c(NA,NA) )
+
+
+lr.out1 = lm(log(ag_testeExams1$time_in_seconds)~ag_testeExams1$n_exams)
+sum1 = summary(lr.out1)
+abline(lr.out1, col = "red")
+
+lr.out2 = lm(log(ag_testeExams2$time_in_seconds)~ag_testeExams2$n_exams)
+sum2 = summary(lr.out2)
+abline(lr.out2, col = "blue")
+
+legend(x="bottomright", 
+       legend=sprintf("code1.c ??? R² = %s\ncode2.c ??? R² = %s",round(sum1$r.squared,6), round(sum2$r.squared,6)))
+
+
+
+
 
 
 
@@ -158,7 +227,35 @@ legend( x="topleft",
 
 
 
+#-- Regressão linear
 
+
+plot(ag_testeExames1_35_60$n_exams,log(ag_testeExames1_35_60$time_in_seconds), 
+     main = paste("------ Experiência 3 ------\n-> Número de Exames [35:1:60] ; Probabilidade 20%\n-> 60 testes por valor de Número de Exames"), 
+     xlab = "Número de Exames",
+     ylab ="Logaritmo do Tempo de execução",
+     type = "p",
+     col = "red")
+
+points(ag_testeExames2_35_60$n_exams,log(ag_testeExames2_35_60$time_in_seconds), 
+       col = "blue")
+
+legend( x="topleft", 
+        legend=c("code1.c","code2.c"),
+        col=c("red","blue"), lwd=1, lty=c(1,1), 
+        pch=c(NA,NA) )
+
+
+lr.out1 = lm(log(ag_testeExames1_35_60$time_in_seconds)~ag_testeExames1_35_60$n_exams)
+sum1 = summary(lr.out1)
+abline(lr.out1, col = "red")
+
+lr.out2 = lm(log(ag_testeExames2_35_60$time_in_seconds)~ag_testeExames2_35_60$n_exams)
+sum2 = summary(lr.out2)
+abline(lr.out2, col = "blue")
+
+legend(x="bottomright", 
+       legend=sprintf("code1.c ??? R² = %s\ncode2.c ??? R² = %s",round(sum1$r.squared,6), round(sum2$r.squared,6)))
 
 
 
@@ -214,6 +311,55 @@ legend( x="topleft",
         legend=c("code1.c","code2.c"),
         col=c("red","blue"), lwd=1, lty=c(1,1), 
         pch=c(NA,NA) )
+
+
+
+
+#-- Regressão linear
+
+
+plot(ag_testeExames_Prob1$n_exams,ag_testeExames_Prob1$time_in_seconds, 
+     main = paste("------ Experiência 5 ------\n-> Número de Exames [10:2:60] ; Probabilidade [2, 5, 15, 25, 50]%)\n-> 20 testes por combinação"), 
+     xlab = "Número de Exames",
+     ylab ="Logaritmo do Tempo de Execução",
+     type="p",
+     col = "red")
+points(ag_testeExames_Prob2$n_exams,ag_testeExames_Prob2$time_in_seconds, 
+       col = "blue")
+
+legend( x="topleft", 
+        legend=c("code1.c","code2.c"),
+        col=c("red","blue"), lwd=1, lty=c(1,1), 
+        pch=c(NA,NA) )
+
+
+lr.out1 = lm(ag_testeExames_Prob1$time_in_seconds~ag_testeExames_Prob1$n_exams)
+sum1 = summary(lr.out1)
+abline(lr.out1, col = "red")
+
+lr.out2 = lm(ag_testeExames_Prob2$time_in_seconds~ag_testeExames_Prob2$n_exams)
+sum2 = summary(lr.out2)
+abline(lr.out2, col = "blue")
+
+legend(x="bottomright", 
+       legend=sprintf("code1.c ??? R² = %s\ncode2.c ??? R² = %s",round(sum1$r.squared,6), round(sum2$r.squared,6)))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -336,6 +482,46 @@ legend( x="topleft",
 
 
 
+#-- Regressão linear
+
+
+plot(ag_testeProb1_65_95$probability_pairs,log(ag_testeProb1_65_95$time_in_seconds), 
+     main = paste("------ Experiência 4 ------\n-> Número de Exames 20 ; Probabilidade [65:1:95]\n-> 40 testes por valor de Probabilidade"), 
+     xlab = "Probabilidade",
+     ylab ="Logaritmo do Tempo de Execução",
+     type = "p",
+     col = "red")
+
+points(ag_testeProb2_65_95$probability_pairs,log(ag_testeProb2_65_95$time_in_seconds), 
+       col = "blue")
+
+legend( x="topleft", 
+        legend=c("code1.c","code2.c"),
+        col=c("red","blue"), lwd=1, lty=c(1,1), 
+        pch=c(NA,NA) )
+
+
+lr.out1 = lm(log(ag_testeProb1_65_95$time_in_seconds)~ag_testeProb1_65_95$probability_pairs)
+sum1 = summary(lr.out1)
+abline(lr.out1, col = "red")
+
+lr.out2 = lm(log(ag_testeProb2_65_95$time_in_seconds)~ag_testeProb2_65_95$probability_pairs)
+sum2 = summary(lr.out2)
+abline(lr.out2, col = "blue")
+
+legend(x="bottomright", 
+       legend=sprintf("code1.c ??? R² = %s\ncode2.c ??? R² = %s",round(sum1$r.squared,6), round(sum2$r.squared,6)))
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -398,6 +584,28 @@ legend( x="topleft",
         pch=c(NA,NA) )
 
 
+
+plot(ag_teste_exames10_40_prob1_16_1$n_exams,log(ag_teste_exames10_40_prob1_16_1$time_in_seconds), 
+     main = paste("------ Teste Número de Exames (10 a 40) ------\n-> Número de Exames [10:1:40] ; Probabilidade [1:1:16]\n-> 20 testes por valor de Número de Exames"), 
+     xlab = "Número de Exames",
+     ylab ="Logaritmo do Tempo de execução",
+     col = "red")
+
+points(ag_teste_exames10_40_prob1_16_2$n_exams,log(ag_teste_exames10_40_prob1_16_2$time_in_seconds), 
+      col = "blue")
+
+
+legend( x="topleft", 
+        legend=c("code1.c","code2.c"),
+        col=c("red","blue"), lwd=1, lty=c(1,1), 
+        pch=c(NA,NA) )
+
+
+lr.out = lm(log(ag_teste_exames10_40_prob1_16_1$time_in_seconds)~ag_teste_exames10_40_prob1_16_1$n_exams)
+sum = summary(lr.out)
+abline(lr.out)
+
+legend(x="bottomright", legend=sprintf("code1.c ??? R² = %s\ncode2.c ??? R² = %s",round(sum1$r.squared,6), round(sum2$r.squared,6)))
 
 
 
