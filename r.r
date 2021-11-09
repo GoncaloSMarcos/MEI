@@ -11,7 +11,7 @@ plot(ag_testeProb1$probability_pairs,ag_testeProb1$time_in_seconds)
 #-----
 testeProb2 = read.table("testeProb2.txt", header=TRUE)
 
-n <- boxplot(time_in_seconds ~ probability_pairs, data = testeProb2);
+n <- boxplot(time_in_seconds ~ probability_pairs, data = testeProb2)
 testeProb2_without_outlier <- testeProb2[-which(testeProb2$time_in_seconds %in% n$out), ]
 ag_testeProb2 = aggregate(time_in_seconds ~ probability_pairs, data = testeProb2_without_outlier, mean)
 
