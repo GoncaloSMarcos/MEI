@@ -4,7 +4,7 @@ import sys
 def main():
     argv = sys.argv[1:]
     n = int(argv[0])
-    p = float(argv[1])/10000
+    p = float(argv[1])/100
     s = int(argv[2])
     f = argv[3]
 

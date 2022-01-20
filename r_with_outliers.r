@@ -20,9 +20,9 @@ plot(ag_testeProb2$probability_pairs,ag_testeProb2$time_in_seconds)
 #-- GRAFICO BOM
 
 plot(ag_testeProb1_sd$probability_pairs,ag_testeProb1_sd$time_in_seconds, 
-     main = paste("------ ExperiÍncia 2 ------\n-> 20 exames ; Probabilidade [2:2:96]\n-> 40 testes por valor de probabilidade"), 
+     main = paste("------ Experi√™ncia 2 ------\n-> 20 exames ; Probabilidade [2:2:96]\n-> 40 testes por valor de probabilidade"), 
      xlab = "Probabilidade (em %)",
-     ylab ="Desvio Padr„o do Tempo de ExecuÁ„o (em segundos)",
+     ylab ="Desvio Padr√£o do Tempo de Execu√ß√£o (em segundos)",
      xlim = range(0:100),
      type = "l",
      col = "red")
@@ -38,13 +38,13 @@ legend( x="topleft",
 
 
 
-#-- Regress„o linear experiencia 2
+#-- Regress√£o linear experiencia 2
 
 
 plot(ag_testeProb1$probability_pairs,log(ag_testeProb1$time_in_seconds), 
-     main = paste("------ ExperiÍncia 2 ------\n-> 20 exames ; Probabilidade [2:2:96]\n-> 40 testes por valor de probabilidade"), 
+     main = paste("------ Experi√™ncia 2 ------\n-> 20 exames ; Probabilidade [2:2:96]\n-> 40 testes por valor de probabilidade"), 
      xlab = "Probabilidade (em %)",
-     ylab ="Logaritmo do Tempo de ExecuÁ„o",
+     ylab ="Logaritmo do Tempo de Execu√ß√£o",
      type = "p",
      col = "red")
 
@@ -66,7 +66,7 @@ sum2 = summary(lr.out2)
 abline(lr.out2, col = "blue")
 
 legend(x="bottomright", 
-       legend=sprintf("code1.c ??? R≤ = %s\ncode2.c ??? R≤ = %s",round(sum1$r.squared,6), round(sum2$r.squared,6)))
+       legend=sprintf("code1.c ‚Üí R¬≤ = %s\ncode2.c ‚Üí R¬≤ = %s",round(sum1$r.squared,6), round(sum2$r.squared,6)))
 
 
 
@@ -83,12 +83,12 @@ ag_testeExams1_sd = aggregate(time_in_seconds ~ n_exams, data = testeExams1, sd)
 
 plot(testeExams1$n_exams,testeExams1$time_in_seconds, 
      main = "Teste Exames 1 - Raw data", 
-     xlab = "N˙mero de Exames",
-     ylab ="Tempo de execuÁ„o (em segundos)")
+     xlab = "N√∫mero de Exames",
+     ylab ="Tempo de execu√ß√£o (em segundos)")
 plot(ag_testeExams1$n_exams,ag_testeExams1$time_in_seconds, 
-     main = "Teste Exames 1 - Valor mÈdio por n˙mero de exames", 
-     xlab = "N˙mero de Exames",
-     ylab ="Tempo de execuÁ„o (em segundos)",
+     main = "Teste Exames 1 - Valor m√©dio por n√∫mero de exames", 
+     xlab = "N√∫mero de Exames",
+     ylab ="Tempo de execu√ß√£o (em segundos)",
      xlim = c(0,52),
      ylim = c(0,60))
 
@@ -103,20 +103,20 @@ ag_testeExams2_sd = aggregate(time_in_seconds ~ n_exams, data = testeExams2, sd)
 
 plot(testeExams2$n_exams,testeExams2$time_in_seconds, 
      main = "Teste Exames 2 - Raw data", 
-     xlab = "N˙mero de Exames",
-     ylab ="Tempo de execuÁ„o (em segundos)")
+     xlab = "N√∫mero de Exames",
+     ylab ="Tempo de execu√ß√£o (em segundos)")
 plot(ag_testeExams2$n_exams,ag_testeExams2$time_in_seconds, 
-     main = "Teste Exames 2 - Valor mÈdio por n˙mero de exames", 
-     xlab = "N˙mero de Exames",
-     ylab ="Tempo de execuÁ„o (em segundos)")
+     main = "Teste Exames 2 - Valor m√©dio por n√∫mero de exames", 
+     xlab = "N√∫mero de Exames",
+     ylab ="Tempo de execu√ß√£o (em segundos)")
 
 
 #-- GRAFICO BOM
 
 plot(ag_testeExams1$n_exams,ag_testeExams1$time_in_seconds, 
-     main = paste("------ ExperiÍncia 1 ------\n-> N˙mero de Exames [2:2:60] ; Probabilidade 20%\n-> 40 repetiÁıes"), 
-     xlab = "N˙mero de Exames",
-     ylab ="Tempo de ExecuÁ„o (em segundos)",
+     main = paste("------ Experi√™ncia 1 ------\n-> N√∫mero de Exames [2:2:60] ; Probabilidade 20%\n-> 40 repeti√ß√µes"), 
+     xlab = "N√∫mero de Exames",
+     ylab ="Tempo de Execu√ß√£o (em segundos)",
      type = "p",
      col = "red")
 
@@ -130,13 +130,13 @@ legend( x="topleft",
 
 
 
-#-- Regress„o linear
+#-- Regress√£o linear
 
 
 plot(ag_testeExams1$n_exams,log(ag_testeExams1$time_in_seconds), 
-     main = paste("------ ExperiÍncia 1 ------\n-> N˙mero de Exames [2:2:60] ; Probabilidade 20%\n-> 40 repetiÁıes"), 
-     xlab = "N˙mero de Exames",
-     ylab ="Logaritmo do Tempo de ExecuÁ„o",
+     main = paste("------ Experi√™ncia 1 ------\n-> N√∫mero de Exames [2:2:60] ; Probabilidade 20%\n-> 40 repeti√ß√µes"), 
+     xlab = "N√∫mero de Exames",
+     ylab ="Logaritmo do Tempo de Execu√ß√£o",
      type = "p",
      col = "red")
 
@@ -158,7 +158,7 @@ sum2 = summary(lr.out2)
 abline(lr.out2, col = "blue")
 
 legend(x="bottomright", 
-       legend=sprintf("code1.c ??? R≤ = %s\ncode2.c ??? R≤ = %s",round(sum1$r.squared,6), round(sum2$r.squared,6)))
+       legend=sprintf("code1.c ‚Üí R¬≤ = %s\ncode2.c ‚Üí R¬≤ = %s",round(sum1$r.squared,6), round(sum2$r.squared,6)))
 
 
 
@@ -179,12 +179,12 @@ ag_testeExames1_35_60_sd = aggregate(time_in_seconds ~ n_exams, data = testeExam
 
 plot(testeExames1_35_60$n_exams,testeExames1_35_60$time_in_seconds, 
      main = "Teste Exames 1 (35 a 60) - Raw data", 
-     xlab = "N˙mero de Exames",
-     ylab ="Tempo de execuÁ„o (em segundos)")
+     xlab = "N√∫mero de Exames",
+     ylab ="Tempo de execu√ß√£o (em segundos)")
 plot(ag_testeExames1_35_60$n_exams,ag_testeExames1_35_60$time_in_seconds, 
-     main = "Teste Exames 1 (35 a 60) - Valor mÈdio por n˙mero de exames", 
-     xlab = "N˙mero de Exames",
-     ylab ="Tempo de execuÁ„o (em segundos)")
+     main = "Teste Exames 1 (35 a 60) - Valor m√©dio por n√∫mero de exames", 
+     xlab = "N√∫mero de Exames",
+     ylab ="Tempo de execu√ß√£o (em segundos)")
 
 
 #-----
@@ -197,20 +197,20 @@ ag_testeExames2_35_60_sd = aggregate(time_in_seconds ~ n_exams, data = testeExam
 
 plot(testeExames2_35_60$n_exams,testeExames2_35_60$time_in_seconds, 
      main = "Teste Exames 2 (35 a 60) - Raw data", 
-     xlab = "N˙mero de Exames",
-     ylab ="Tempo de execuÁ„o (em segundos)")
+     xlab = "N√∫mero de Exames",
+     ylab ="Tempo de execu√ß√£o (em segundos)")
 plot(ag_testeExames2_35_60$n_exams,ag_testeExames2_35_60$time_in_seconds, 
-     main = "Teste Exames 2 (35 a 60) - Valor mÈdio por n˙mero de exames", 
-     xlab = "N˙mero de Exames",
-     ylab ="Tempo de execuÁ„o (em segundos)")
+     main = "Teste Exames 2 (35 a 60) - Valor m√©dio por n√∫mero de exames", 
+     xlab = "N√∫mero de Exames",
+     ylab ="Tempo de execu√ß√£o (em segundos)")
 
 
 #-- GRAFICO BOM
 
 plot(ag_testeExames1_35_60$n_exams,ag_testeExames1_35_60$time_in_seconds, 
-     main = paste("------ ExperiÍncia 3 ------\n-> N˙mero de Exames [35:1:60] ; Probabilidade 20%\n-> 60 testes por valor de N˙mero de Exames"), 
-     xlab = "N˙mero de Exames",
-     ylab ="Tempo de execuÁ„o (em segundos)",
+     main = paste("------ Experi√™ncia 3 ------\n-> N√∫mero de Exames [35:1:60] ; Probabilidade 20%\n-> 60 testes por valor de N√∫mero de Exames"), 
+     xlab = "N√∫mero de Exames",
+     ylab ="Tempo de execu√ß√£o (em segundos)",
      type = "l",
      col = "red")
 
@@ -227,13 +227,13 @@ legend( x="topleft",
 
 
 
-#-- Regress„o linear
+#-- Regress√£o linear
 
 
 plot(ag_testeExames1_35_60$n_exams,log(ag_testeExames1_35_60$time_in_seconds), 
-     main = paste("------ ExperiÍncia 3 ------\n-> N˙mero de Exames [35:1:60] ; Probabilidade 20%\n-> 60 testes por valor de N˙mero de Exames"), 
-     xlab = "N˙mero de Exames",
-     ylab ="Logaritmo do Tempo de execuÁ„o",
+     main = paste("------ Experi√™ncia 3 ------\n-> N√∫mero de Exames [35:1:60] ; Probabilidade 20%\n-> 60 testes por valor de N√∫mero de Exames"), 
+     xlab = "N√∫mero de Exames",
+     ylab ="Logaritmo do Tempo de execu√ß√£o",
      type = "p",
      col = "red")
 
@@ -255,7 +255,7 @@ sum2 = summary(lr.out2)
 abline(lr.out2, col = "blue")
 
 legend(x="bottomright", 
-       legend=sprintf("code1.c ??? R≤ = %s\ncode2.c ??? R≤ = %s",round(sum1$r.squared,6), round(sum2$r.squared,6)))
+       legend=sprintf("code1.c ‚Üí R¬≤ = %s\ncode2.c ‚Üí R¬≤ = %s",round(sum1$r.squared,6), round(sum2$r.squared,6)))
 
 
 
@@ -271,12 +271,12 @@ ag_testeExames_Prob1_sd = aggregate(time_in_seconds ~ n_exams, data = testeExame
 
 plot(testeExames_Prob1$n_exams,testeExames_Prob1$time_in_seconds, 
      main = "Teste Exames e Prob 1 - Raw data (Probabilidades 2,5,25,50)", 
-     xlab = "N˙mero de Exames",
-     ylab ="Tempo de execuÁ„o (em segundos)")
+     xlab = "N√∫mero de Exames",
+     ylab ="Tempo de execu√ß√£o (em segundos)")
 plot(ag_testeExames_Prob1$n_exams,ag_testeExames_Prob1$time_in_seconds, 
-     main = "Teste Exames e Prob 1 - Valor mÈdio por n˙mero de exames (Probabilidades 2,5,25,50)", 
-     xlab = "N˙mero de Exames",
-     ylab ="Tempo de execuÁ„o (em segundos)")
+     main = "Teste Exames e Prob 1 - Valor m√©dio por n√∫mero de exames (Probabilidades 2,5,25,50)", 
+     xlab = "N√∫mero de Exames",
+     ylab ="Tempo de execu√ß√£o (em segundos)")
 
 # ------------------  ------------------ 
 testeExames_Prob2 = read.table("teste_Exames_Prob2.txt", header=TRUE)
@@ -287,20 +287,20 @@ ag_testeExames_Prob2_sd = aggregate(time_in_seconds ~ n_exams, data = testeExame
 
 plot(testeExames_Prob2$n_exams,testeExames_Prob2$time_in_seconds, 
      main = "Teste Exames e Prob 2 - Raw data (Probabilidades 2,5,25,50)", 
-     xlab = "N˙mero de Exames",
-     ylab ="Tempo de execuÁ„o (em segundos)")
+     xlab = "N√∫mero de Exames",
+     ylab ="Tempo de execu√ß√£o (em segundos)")
 plot(ag_testeExames_Prob2$n_exams,ag_testeExames_Prob2$time_in_seconds, 
-     main = "Teste Exames e Prob 2 - Valor mÈdio por n˙mero de exames (Probabilidades 2,5,25,50)", 
-     xlab = "N˙mero de Exames",
-     ylab ="Tempo de execuÁ„o (em segundos)")
+     main = "Teste Exames e Prob 2 - Valor m√©dio por n√∫mero de exames (Probabilidades 2,5,25,50)", 
+     xlab = "N√∫mero de Exames",
+     ylab ="Tempo de execu√ß√£o (em segundos)")
 
 
 #-- GRAFICO BOM EXAMES
 
 plot(ag_testeExames_Prob1_sd$n_exams,ag_testeExames_Prob1_sd$time_in_seconds, 
-     main = paste("------ ExperiÍncia 5 ------\n-> N˙mero de Exames [10:2:60] ; Probabilidade [2, 5, 15, 25, 50]%)\n-> 20 testes por combinaÁ„o"), 
-     xlab = "N˙mero de Exames",
-     ylab ="Desvio Padr„o do Tempo de ExecuÁ„o (em segundos)",
+     main = paste("------ Experi√™ncia 5 ------\n-> N√∫mero de Exames [10:2:60] ; Probabilidade [2, 5, 15, 25, 50]%)\n-> 20 testes por combina√ß√£o"), 
+     xlab = "N√∫mero de Exames",
+     ylab ="Desvio Padr√£o do Tempo de Execu√ß√£o (em segundos)",
      type="l",
      col = "red")
 
@@ -315,13 +315,13 @@ legend( x="topleft",
 
 
 
-#-- Regress„o linear
+#-- Regress√£o linear
 
 
 plot(ag_testeExames_Prob1$n_exams,ag_testeExames_Prob1$time_in_seconds, 
-     main = paste("------ ExperiÍncia 5 ------\n-> N˙mero de Exames [10:2:60] ; Probabilidade [2, 5, 15, 25, 50]%)\n-> 20 testes por combinaÁ„o"), 
-     xlab = "N˙mero de Exames",
-     ylab ="Logaritmo do Tempo de ExecuÁ„o",
+     main = paste("------ Experi√™ncia 5 ------\n-> N√∫mero de Exames [10:2:60] ; Probabilidade [2, 5, 15, 25, 50]%)\n-> 20 testes por combina√ß√£o"), 
+     xlab = "N√∫mero de Exames",
+     ylab ="Logaritmo do Tempo de Execu√ß√£o",
      type="p",
      col = "red")
 points(ag_testeExames_Prob2$n_exams,ag_testeExames_Prob2$time_in_seconds, 
@@ -342,7 +342,7 @@ sum2 = summary(lr.out2)
 abline(lr.out2, col = "blue")
 
 legend(x="bottomright", 
-       legend=sprintf("code1.c ??? R≤ = %s\ncode2.c ??? R≤ = %s",round(sum1$r.squared,6), round(sum2$r.squared,6)))
+       legend=sprintf("code1.c ‚Üí R¬≤ = %s\ncode2.c ‚Üí R¬≤ = %s",round(sum1$r.squared,6), round(sum2$r.squared,6)))
 
 
 
@@ -374,11 +374,11 @@ ag_testeExames_Prob2 = aggregate(time_in_seconds ~ probability_pairs, data = tes
 plot(testeExames_Prob2$probability_pairs,testeExames_Prob2$time_in_seconds, 
      main = "Teste Exames e Prob 2 - Raw data (Exames 10 a 60, 2 em 2)", 
      xlab = "Probabilidade",
-     ylab ="Tempo de execuÁ„o (em segundos)")
+     ylab ="Tempo de execu√ß√£o (em segundos)")
 plot(ag_testeExames_Prob2$probability_pairs,ag_testeExames_Prob2$time_in_seconds, 
-     main = "Teste Exames e Prob 2 - Valor mÈdio por n˙mero de exames (Exames 10 a 60, 2 em 2)", 
+     main = "Teste Exames e Prob 2 - Valor m√©dio por n√∫mero de exames (Exames 10 a 60, 2 em 2)", 
      xlab = "Probabilidade",
-     ylab ="Tempo de execuÁ„o (em segundos)")
+     ylab ="Tempo de execu√ß√£o (em segundos)")
 
 # ------------------  ------------------ 
 
@@ -390,19 +390,19 @@ ag_testeExames_Prob1 = aggregate(time_in_seconds ~ probability_pairs, data = tes
 plot(testeExames_Prob1$probability_pairs,testeExames_Prob1$time_in_seconds, 
      main = "Teste Exames e Prob 1 - Raw data (Exames 10 a 60, 2 em 2)", 
      xlab = "Probabilidade",
-     ylab ="Tempo de execuÁ„o (em segundos)")
+     ylab ="Tempo de execu√ß√£o (em segundos)")
 plot(ag_testeExames_Prob1$probability_pairs,ag_testeExames_Prob1$time_in_seconds, 
-     main = "Teste Exames e Prob 1 - Valor mÈdio por n˙mero de exames (Exames 10 a 60, 2 em 2)", 
+     main = "Teste Exames e Prob 1 - Valor m√©dio por n√∫mero de exames (Exames 10 a 60, 2 em 2)", 
      xlab = "Probabilidade",
-     ylab ="Tempo de execuÁ„o (em segundos)")
+     ylab ="Tempo de execu√ß√£o (em segundos)")
 
 
 #-- GRAFICO BOM PROBS
 
 plot(ag_testeExames_Prob1$probability_pairs,ag_testeExames_Prob1$time_in_seconds, 
-     main = paste("------ Teste Exames e Probabilidade ------\n-> N˙mero de Exames [10:2:60] ; Probabilidade [2, 5, 15, 25, 50]%)\n-> 20 testes por combinaÁ„o"), 
+     main = paste("------ Teste Exames e Probabilidade ------\n-> N√∫mero de Exames [10:2:60] ; Probabilidade [2, 5, 15, 25, 50]%)\n-> 20 testes por combina√ß√£o"), 
      xlab = "Probabilidade (em %)",
-     ylab ="Tempo de execuÁ„o (em segundos)",
+     ylab ="Tempo de execu√ß√£o (em segundos)",
      type="l",
      col = "red")
 
@@ -436,11 +436,11 @@ ag_testeProb1_65_95_sd = aggregate(time_in_seconds ~ probability_pairs, data = t
 plot(testeProb1_65_95$probability_pairs,testeProb1_65_95$time_in_seconds, 
      main = "Teste Probabilidade 1 (65% a 95%) - Raw data", 
      xlab = "Probabilidade (em %)",
-     ylab ="Tempo de execuÁ„o (em segundos)")
+     ylab ="Tempo de execu√ß√£o (em segundos)")
 plot(ag_testeProb1_65_95$probability_pairs,ag_testeProb1_65_95$time_in_seconds, 
-     main = "Teste Probabilidade 1 (65% a 95%) - Valor mÈdio por probabilidade", 
+     main = "Teste Probabilidade 1 (65% a 95%) - Valor m√©dio por probabilidade", 
      xlab = "Probabilidade (em %)",
-     ylab ="Tempo de execuÁ„o (em segundos)")
+     ylab ="Tempo de execu√ß√£o (em segundos)")
 
 
 #-----
@@ -454,19 +454,19 @@ ag_testeProb2_65_95_sd = aggregate(time_in_seconds ~ probability_pairs, data = t
 plot(testeProb2_65_95$probability_pairs,testeProb2_65_95$time_in_seconds, 
      main = "Teste Probabilidade 2 (65% a 95%) - Raw data", 
      xlab = "Probabilidade (em %)",
-     ylab ="Tempo de execuÁ„o (em segundos)")
+     ylab ="Tempo de execu√ß√£o (em segundos)")
 plot(ag_testeProb2_65_95$probability_pairs,ag_testeProb2_65_95$time_in_seconds, 
-     main = "Teste Probabilidade 2 (65% a 95%) - Valor mÈdio por probabilidade", 
+     main = "Teste Probabilidade 2 (65% a 95%) - Valor m√©dio por probabilidade", 
      xlab = "Probabilidade (em %)",
-     ylab ="Tempo de execuÁ„o (em segundos)")
+     ylab ="Tempo de execu√ß√£o (em segundos)")
 
 
 #-- GRAFICO BOM PROBS
 
 plot(ag_testeProb1_65_95_sd$probability_pairs,ag_testeProb1_65_95_sd$time_in_seconds, 
-     main = paste("------ ExperiÍncia 4 ------\n-> N˙mero de Exames 20 ; Probabilidade [65:1:95]\n-> 40 testes por valor de Probabilidade"), 
+     main = paste("------ Experi√™ncia 4 ------\n-> N√∫mero de Exames 20 ; Probabilidade [65:1:95]\n-> 40 testes por valor de Probabilidade"), 
      xlab = "Probabilidade (em %)",
-     ylab ="Desvio Padr„o do Tempo de ExecuÁ„o (em segundos)",
+     ylab ="Desvio Padr√£o do Tempo de Execu√ß√£o (em segundos)",
      type = "l",
      col = "red")
 
@@ -482,13 +482,13 @@ legend( x="topleft",
 
 
 
-#-- Regress„o linear
+#-- Regress√£o linear
 
 
 plot(ag_testeProb1_65_95$probability_pairs,log(ag_testeProb1_65_95$time_in_seconds), 
-     main = paste("------ ExperiÍncia 4 ------\n-> N˙mero de Exames 20 ; Probabilidade [65:1:95]\n-> 40 testes por valor de Probabilidade"), 
-     xlab = "Probabilidade",
-     ylab ="Logaritmo do Tempo de ExecuÁ„o",
+     main = paste("------ Experi√™ncia 4 ------\n-> N√∫mero de Exames 20 ; Probabilidade [65:1:95]\n-> 40 testes por valor de Probabilidade"), 
+     xlab = "Probabilidade (em %)",
+     ylab ="Logaritmo do Tempo de Execu√ß√£o",
      type = "p",
      col = "red")
 
@@ -510,7 +510,7 @@ sum2 = summary(lr.out2)
 abline(lr.out2, col = "blue")
 
 legend(x="bottomright", 
-       legend=sprintf("code1.c ??? R≤ = %s\ncode2.c ??? R≤ = %s",round(sum1$r.squared,6), round(sum2$r.squared,6)))
+       legend=sprintf("code1.c ‚Üí R¬≤ = %s\ncode2.c ‚Üí R¬≤ = %s",round(sum1$r.squared,6), round(sum2$r.squared,6)))
 
 
 
@@ -536,14 +536,14 @@ ag_teste_exames10_40_prob1_16_1_sd = aggregate(time_in_seconds ~ n_exams, data =
 
 plot(teste_exames10_40_prob1_16_1$n_exams,teste_exames10_40_prob1_16_1$time_in_seconds, 
      main = "Teste Exames e Prob Experiencia 1 - Raw data (Probabilidades 1 a 16)", 
-     xlab = "N˙mero de Exames",
-     ylab ="Tempo de execuÁ„o (em segundos)")
+     xlab = "N√∫mero de Exames",
+     ylab ="Tempo de execu√ß√£o (em segundos)")
 
 
 plot(ag_teste_exames10_40_prob1_16_1$n_exams,ag_teste_exames10_40_prob1_16_1$time_in_seconds, 
-     main = "Teste Exames e Prob Experiencia 1 - Valor mÈdio por n˙mero de exames (Probabilidades 1 a 16)", 
-     xlab = "N˙mero de Exames",
-     ylab ="Tempo de execuÁ„o (em segundos)")
+     main = "Teste Exames e Prob Experiencia 1 - Valor m√©dio por n√∫mero de exames (Probabilidades 1 a 16)", 
+     xlab = "N√∫mero de Exames",
+     ylab ="Tempo de execu√ß√£o (em segundos)")
 
 # ------------------  ------------------ 
 
@@ -556,12 +556,12 @@ ag_teste_exames10_40_prob1_16_2_sd = aggregate(time_in_seconds ~ n_exams, data =
 
 plot(teste_exames10_40_prob1_16_2$n_exams,teste_exames10_40_prob1_16_2$time_in_seconds, 
      main = "Teste Exames e Prob 1 - Raw data (Exames 10 a 60, 2 em 2)", 
-     xlab = "N˙mero de Exame",
-     ylab ="Tempo de execuÁ„o (em segundos)")
+     xlab = "N√∫mero de Exame",
+     ylab ="Tempo de execu√ß√£o (em segundos)")
 plot(ag_teste_exames10_40_prob1_16_2$n_exams,ag_teste_exames10_40_prob1_16_2$time_in_seconds, 
-     main = "Teste Exames e Prob 1 - Valor mÈdio por n˙mero de exames (Exames 10 a 60, 2 em 2)", 
-     xlab = "N˙mero de Exames",
-     ylab ="Tempo de execuÁ„o (em segundos)")
+     main = "Teste Exames e Prob 1 - Valor m√©dio por n√∫mero de exames (Exames 10 a 60, 2 em 2)", 
+     xlab = "N√∫mero de Exames",
+     ylab ="Tempo de execu√ß√£o (em segundos)")
 
 
 
@@ -569,9 +569,9 @@ plot(ag_teste_exames10_40_prob1_16_2$n_exams,ag_teste_exames10_40_prob1_16_2$tim
 #-- GRAFICO BOM
 
 plot(ag_teste_exames10_40_prob1_16_1$n_exams,ag_teste_exames10_40_prob1_16_1$time_in_seconds, 
-     main = paste("------ Teste N˙mero de Exames (10 a 40) ------\n-> N˙mero de Exames [10:1:40] ; Probabilidade [1:1:16]\n-> 20 testes por valor de N˙mero de Exames"), 
-     xlab = "N˙mero de Exames",
-     ylab ="Tempo de execuÁ„o (em segundos)",
+     main = paste("------ Teste N√∫mero de Exames (10 a 40) ------\n-> N√∫mero de Exames [10:1:40] ; Probabilidade [1:1:16]\n-> 20 testes por valor de N√∫mero de Exames"), 
+     xlab = "N√∫mero de Exames",
+     ylab ="Tempo de execu√ß√£o (em segundos)",
      type = "l",
      col = "red")
 
@@ -586,9 +586,9 @@ legend( x="topleft",
 
 
 plot(ag_teste_exames10_40_prob1_16_1$n_exams,log(ag_teste_exames10_40_prob1_16_1$time_in_seconds), 
-     main = paste("------ Teste N˙mero de Exames (10 a 40) ------\n-> N˙mero de Exames [10:1:40] ; Probabilidade [1:1:16]\n-> 20 testes por valor de N˙mero de Exames"), 
-     xlab = "N˙mero de Exames",
-     ylab ="Logaritmo do Tempo de execuÁ„o",
+     main = paste("------ Experi√™ncia 6 ------\n-> N√∫mero de Exames [10:1:40] ; Probabilidade [1:1:16]\n-> 20 repeti√ß√µes"), 
+     xlab = "N√∫mero de Exames",
+     ylab ="Logaritmo do Tempo de execu√ß√£o",
      col = "red")
 
 points(ag_teste_exames10_40_prob1_16_2$n_exams,log(ag_teste_exames10_40_prob1_16_2$time_in_seconds), 
@@ -601,11 +601,17 @@ legend( x="topleft",
         pch=c(NA,NA) )
 
 
-lr.out = lm(log(ag_teste_exames10_40_prob1_16_1$time_in_seconds)~ag_teste_exames10_40_prob1_16_1$n_exams)
-sum = summary(lr.out)
-abline(lr.out)
+lr.out1 = lm(log(ag_teste_exames10_40_prob1_16_1$time_in_seconds)~ag_teste_exames10_40_prob1_16_1$n_exams)
+sum1 = summary(lr.out1)
+abline(lr.out1, col = "red")
 
-legend(x="bottomright", legend=sprintf("code1.c ??? R≤ = %s\ncode2.c ??? R≤ = %s",round(sum1$r.squared,6), round(sum2$r.squared,6)))
+lr.out2 = lm(log(ag_teste_exames10_40_prob1_16_2$time_in_seconds)~ag_teste_exames10_40_prob1_16_2$n_exams)
+sum2 = summary(lr.out2)
+abline(lr.out2, col = "blue")
+
+
+
+legend(x="bottomright", legend=sprintf("code1.c ‚Üí R¬≤ = %s\ncode2.c ‚Üí R¬≤ = %s",round(sum1$r.squared,6), round(sum2$r.squared,6)))
 
 
 
@@ -625,14 +631,14 @@ ag_teste_exames10_40_prob1_16_1_sd = aggregate(time_in_seconds ~ probability_pai
 
 plot(teste_exames10_40_prob1_16_1$probability_pairs,teste_exames10_40_prob1_16_1$time_in_seconds, 
      main = "Teste Exames e Prob Experiencia 1 - Raw data (Probabilidades 1 a 16)", 
-     xlab = "N˙mero de Exames",
-     ylab ="Tempo de execuÁ„o (em segundos)")
+     xlab = "N√∫mero de Exames",
+     ylab ="Tempo de execu√ß√£o (em segundos)")
 
 
 plot(ag_teste_exames10_40_prob1_16_1$probability_pairs,ag_teste_exames10_40_prob1_16_1$time_in_seconds, 
-     main = "Teste Exames e Prob Experiencia 1 - Valor mÈdio por n˙mero de exames (Probabilidades 1 a 16)", 
-     xlab = "N˙mero de Exames",
-     ylab ="Tempo de execuÁ„o (em segundos)")
+     main = "Teste Exames e Prob Experiencia 1 - Valor m√©dio por n√∫mero de exames (Probabilidades 1 a 16)", 
+     xlab = "N√∫mero de Exames",
+     ylab ="Tempo de execu√ß√£o (em segundos)")
 
 # ------------------  ------------------ 
 
@@ -646,11 +652,11 @@ ag_teste_exames10_40_prob1_16_2_sd = aggregate(time_in_seconds ~ probability_pai
 plot(teste_exames10_40_prob1_16_2$probability_pairs,teste_exames10_40_prob1_16_2$time_in_seconds, 
      main = "Teste Exames e Prob 1 - Raw data (Exames 10 a 60, 2 em 2)", 
      xlab = "Probabilidade",
-     ylab ="Tempo de execuÁ„o (em segundos)")
+     ylab ="Tempo de execu√ß√£o (em segundos)")
 plot(ag_teste_exames10_40_prob1_16_2$probability_pairs,ag_teste_exames10_40_prob1_16_2$time_in_seconds, 
-     main = "Teste Exames e Prob 1 - Valor mÈdio por n˙mero de exames (Exames 10 a 60, 2 em 2)", 
+     main = "Teste Exames e Prob 1 - Valor m√©dio por n√∫mero de exames (Exames 10 a 60, 2 em 2)", 
      xlab = "Probabilidade",
-     ylab ="Tempo de execuÁ„o (em segundos)")
+     ylab ="Tempo de execu√ß√£o (em segundos)")
 
 
 
@@ -658,9 +664,9 @@ plot(ag_teste_exames10_40_prob1_16_2$probability_pairs,ag_teste_exames10_40_prob
 #-- GRAFICO BOM
 
 plot(ag_teste_exames10_40_prob1_16_1$probability_pairs,ag_teste_exames10_40_prob1_16_1$time_in_seconds, 
-     main = paste("------ Teste Probabilidade (1% a 16%) ------\n-> N˙mero de Exames [10:1:40] ; Probabilidade [1:1:16]\n-> 20 testes por valor de Probabilidade"), 
+     main = paste("------ Teste Probabilidade (1% a 16%) ------\n-> N√∫mero de Exames [10:1:40] ; Probabilidade [1:1:16]\n-> 20 testes por valor de Probabilidade"), 
      xlab = "Probabilidade (em %)",
-     ylab ="Tempo de execuÁ„o (em segundos)",
+     ylab ="Tempo de execu√ß√£o (em segundos)",
      type = "l",
      col = "red")
 
@@ -671,6 +677,82 @@ legend( x="topleft",
         legend=c("code1.c","code2.c"),
         col=c("red","blue"), lwd=1, lty=c(1,1), 
         pch=c(NA,NA) )
+
+
+
+
+# ------------------------------------------------------------------------------ 
+# --------------------------------- META 3 ------------------------------------- 
+# ------------------------------------------------------------------------------ 
+
+
+
+# ------------------ TESTES Hipotese 1 ------------------ 
+hip1_code1 = read.table("results_code1_meta3_hip1_t2.txt", header=TRUE)
+
+ag_hip1_code1 = aggregate(time_in_seconds ~ probability_pairs, data = hip1_code1, mean)
+ag_hip1_code1_sd = aggregate(time_in_seconds ~ probability_pairs, data = hip1_code1, sd)
+
+
+#plot(hip1_code1$probability_pairs,hip1_code1$time_in_seconds)
+
+#-----
+hip1_code2 = read.table("results_code2_meta3_hip1_t2.txt", header=TRUE)
+
+ag_hip1_code2 = aggregate(time_in_seconds ~ probability_pairs, data = hip1_code2, mean)
+ag_hip1_code2_sd = aggregate(time_in_seconds ~ probability_pairs, data = hip1_code2, sd)
+
+plot(hip1_code2$probability_pairs,hip1_code2$time_in_seconds)
+plot(ag_hip1_code2$probability_pairs,ag_hip1_code2$time_in_seconds)
+
+#-- GRAFICO BOM
+
+plot(ag_hip1_code1$probability_pairs,ag_hip1_code1$time_in_seconds, 
+     main = paste("------ Hip√≥tese 1 ------\n->"), 
+     xlab = "Probabilidade (em %)",
+     ylab ="Tempo de Execu√ß√£o (em segundos)",
+     xlim = range(0:600),
+     type = "p",
+     col = "red")
+
+points(ag_hip1_code2$probability_pairs,ag_hip1_code2$time_in_seconds, 
+      col = "blue")
+
+legend( x="topleft", 
+        legend=c("code1.c","code2.c"),
+        col=c("red","blue"), lwd=1, lty=c(1,1), 
+        pch=c(NA,NA) )
+
+
+
+
+##------- ANOVA 
+setwd("C:\\Users\\gonca\\Desktop\\MEI")
+library(tidyverse)
+library(rstatix)
+hip1 = read.table("hip1.txt", header=TRUE)
+
+aov.out = aov(time_in_seconds~factor(code)*factor(probability_pairs), data=hip1)
+summary(aov.out)
+
+
+hip2 = read.table("hip2.txt", header=TRUE)
+table2 = subset(hip2, select=c(code, time_in_seconds, n_exams))
+
+
+res.aov <- table2 %>% anova_test(time_in_seconds ~ code * n_exams)
+show(res.aov)
+
+
+aov.out = aov(log(time_in_seconds)~factor(code)+factor(n_exams), data=hip2)
+summary(aov.out)
+
+
+
+
+
+
+
 
 
 

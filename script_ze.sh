@@ -3,19 +3,19 @@
 gcc code1.c -o code1 -O3
 gcc code2.c -o code2 -O3
 
-MAX_ITERATIONS=99
+MAX_ITERATIONS=49
 
 FILENAME_DATA_INPUT="data.in"
 
 # Variáveis do gen.py
-N_EXAMS=2  # Max 299 segundo o enunciado
+N_EXAMS=  # Max 299 segundo o enunciado
 PROBABILITY_PAIRS=20 # Out of 100
 PROBABILITY_INCREMENT_VALUE=0
 EXAMS_INCREMENT_VALUE=1
 SEED_GEN=$(shuf -i1-30000 -n1) 
 # Variáveis do programa
 SEED_PROGRAM=$(shuf -i1-30000 -n1) 
-MAX_TIME=120  #in seconds
+MAX_TIME=300  #in seconds
 
 echo "n_exams probability_pairs seed_gen seed_program min_time_slots time_in_seconds" >> results_code1_meta3.txt
 echo "n_exams probability_pairs seed_gen seed_program min_time_slots time_in_seconds" >> results_code2_meta3.txt
